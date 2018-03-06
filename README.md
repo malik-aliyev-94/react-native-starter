@@ -168,11 +168,98 @@ Open the **./src/components/Alphabet** component. You can see horizontal scrolli
 To ***hide Scroll Indicator*** set **showsHorizontalScrollIndicator** to **false**
 
 ## Carousel
+
 ## Background Image, Text over an image
+You can use ImageBackground component for this purpose. See the example in the **./src/screens/TestScreen** file.
+
+```javascript
+import { ImageBackground } from 'react-native';
+
+<ImageBackground
+  imageStyle={{ borderRadius: 10 }}
+  style={{width: 300, height: 300, margin: 10, flex: 1, justifyContent: 'flex-end'}}
+  source={{ uri: 'https://i.imgur.com/KZsmUi2l.jpg'}} >
+  <Text style={{color: '#fff', fontSize: 40, padding: 10}}>This is a text over an image</Text>
+</ImageBackground>
+```
 ## Gradient background
+This component is included into [Expo SDK](https://docs.expo.io/versions/latest/sdk/linear-gradient.html).
+
+We have used this component to render background gradient for letters in the Alphabet component.
+
+```javascript
+<LinearGradient
+  colors={[item[1], item[2]]}
+  start={{x: 0.0, y: 1.0}} end={{x: 1.0, y: 1.0}}
+  style={{
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin:10,
+    shadowOffset:{  width: 0,  height: 10 },
+    shadowColor: '#AAA',
+    shadowOpacity: .3,
+    shadowRadius: 5,
+    borderRadius: 25,
+    flex: 1,
+  }}
+>
+  <View style={{width: 50, height: 50, flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+    <Text style={{fontSize: 30, fontWeight: 'bold', color: '#fff'}}>{item[0]}</Text>
+  </View>
+</LinearGradient>
+```
+
+[GitHub repo](https://github.com/react-native-community/react-native-linear-gradient) is available.
+
 ## Fetch example
+First Read the [React Native Networking](https://facebook.github.io/react-native/docs/network.html#docsNav) doc from the official website.
+
+Then open the **IntroScreen** and see the example.
+
+```javascript
+componentDidMount(){
+  return fetch('https://api.github.com/users/malik-aliyev-94')
+    .then((response) => response.json())
+    .then((responseJson) => {
+
+      this.setState({
+        isLoading: false,
+        data: responseJson,
+      }, function(){
+
+      });
+
+    })
+    .catch((error) =>{
+      console.error(error);
+    });
+}
+```
+Also ActivityIndicator is used here.
+
 ## Status bar
+There is a small [package](https://github.com/malik-aliyev-94/react-native-is-iphonex) to determine whether if the device is iPhoneX and then set he StatusBar height.
+
+```javascript
+export const StatusBarView = (props) => (
+  <View style={{height: (isIphoneX) ? 44 : 20, backgroundColor: props.bg}}></View>
+);
+```
+
 ## MobX
+MobX is a simple, scalable state management tool.
+
+Dashboard on the HomeScreen also Modal window configured using MobX.
+
+Store file is located at the **./src/stores** dir.
+
+Read more about MobX [here](https://mobx.js.org/index.html).
+
+[React bindings for MobX](https://github.com/mobxjs/mobx-react)
 ## Layout
+[The Full React Native Layout Cheat Sheet](https://medium.com/@drorbiran/the-full-react-native-layout-cheat-sheet-a4147802405c) - this article on medium is highly recommended to read to understand
+
 ## OneSignal Notifications
 ## WebView
+
+OneSignal Notifications, WebView and other features and components will be included to this project in the future.

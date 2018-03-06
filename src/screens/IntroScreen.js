@@ -13,7 +13,7 @@ const BackBtn = (props) => (
   </View>
 );
 
-export default class HomeScreen extends React.Component {
+export default class IntroScreen extends React.Component {
 
   constructor(props){
     super(props);
