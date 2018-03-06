@@ -131,9 +131,42 @@ import { Modal } from 'react-native';
 ```
 
 ## First Launch screen (AsyncStorage)
+You can use Modal for the Intro Screen (First Launch Screen) for example.
+To show screen once use [AsyncStorage](https://facebook.github.io/react-native/docs/asyncstorage.html#docsNav).
+
+AsyncStorage is a simple, unencrypted, asynchronous, persistent, key-value storage system that is global to the app. It should be used instead of LocalStorage.
+
+See [react-native-app-intro](https://github.com/FuYaoDe/react-native-app-intro) on GitHub. This  is a react native component implementing a parallax effect welcome page using base on [react-native-swiper](https://github.com/leecade/react-native-swiper).
 
 ## Swiper
+On the modal window we have used [react-native-swiper](https://github.com/leecade/react-native-swiper) as a full screen horizontal slider.
+
+See the usage example in the Modal component.
+
+```javascript
+<Swiper style={styles.wrapper} showsButtons={true}>
+  <View style={styles.slide1}>
+    <Text style={styles.text}>Hello Swiper</Text>
+  </View>
+  <View style={styles.slide2}>
+    <Text style={styles.text}>Beautiful</Text>
+  </View>
+  <View style={styles.slide3}>
+    <Text style={styles.text}>And simple</Text>
+  </View>
+</Swiper>
+```
 ## Horizontal Scroll
+
+Open the **./src/components/Alphabet** component. You can see horizontal scrolling example in this file.
+
+```javascript
+<ScrollView horizontal showsHorizontalScrollIndicator={false} style={{padding:10}}>
+...
+</ScrollView>
+```
+To ***hide Scroll Indicator*** set **showsHorizontalScrollIndicator** to **false**
+
 ## Carousel
 ## Background Image, Text over an image
 ## Gradient background
