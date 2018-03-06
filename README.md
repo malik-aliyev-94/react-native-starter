@@ -57,3 +57,89 @@ Read more about customization here https://docs.nativebase.io/Customize.html#Cus
 Read the doc from the official [website](https://reactnavigation.org).
 
 In this project we have used **TabNavigator**. You can see the configuration in **./App.js** file.
+
+Some Tips for React navigation
+
+* If you want to hide tabBar on some screen, set **navigationOptions: { tabBarVisible: false }**
+
+For example:
+
+```javascript
+const Nav =  (MainScreenNavigator = TabNavigator(
+  {
+    Home: { screen: HomeScreen },
+    Test: { screen: TestScreen },
+    Intro: {
+      screen: IntroScreen,
+      navigationOptions: { tabBarVisible: false }
+    },
+    Detail: { screen: DetailScreen }
+  },
+  {
+    ...
+  }
+));
+```
+
+* You can create a StackNavigator for each screen
+* Use withNavigation from react-navigation to access navigation from everywhere :)
+See **./src/components/Alphabet.js** for example.
+```javascript
+import { withNavigation } from 'react-navigation';
+```
+
+[withNavigation](https://reactnavigation.org/docs/with-navigation.html#docsNav) is a higher order component which passes the navigation prop into a wrapped component. It's useful when you cannot pass the navigation prop into the component directly, or don't want to pass it in case of a deeply nested child.
+
+## Routing parameters
+How to pass parameters to the screens ?
+
+See the example in the **Alphabet** component. Params are passed to the navigate method as the second parameter.
+
+```javascript
+<TouchableOpacity
+  onPress={ () => props.navigation.navigate("Detail", {letter: item[0]}) }>
+  ...
+```
+
+In **./src/screen/DetailScreen** you can see how to access this parameters.
+
+```javascript
+const DetailScreen = (props) => (
+  <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+    <Text style={{fontSize: 30, color: '#687793'}}>This is letter</Text>
+    <Text style={{fontSize: 100, fontWeight: 'bold'}}>{ props.navigation.state.params.letter }</Text>
+  </View>
+);
+```
+Read more on the [website](https://reactnavigation.org/docs/params.html#docsNav).
+
+## Modal
+Click the last item on the tabBar navigation to see the modal example.
+
+The Modal component is a simple way to present content above an enclosing view.
+
+To show or hide modal set the **visible** attribute to **true** or **false**.
+
+```javascript
+import { Modal } from 'react-native';
+
+<Modal
+  animationType="slide"
+  transparent={false}
+  visible={AppStore.modalVisible}
+  ...
+```
+
+## First Launch screen (AsyncStorage)
+
+## Swiper
+## Horizontal Scroll
+## Carousel
+## Background Image, Text over an image
+## Gradient background
+## Fetch example
+## Status bar
+## MobX
+## Layout
+## OneSignal Notifications
+## WebView
