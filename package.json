@@ -1,0 +1,22 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "dependencies": {
+    "@malik.aliyev.94/react-native-is-iphonex": "^1.0.0",
+    "expo": "^25.0.0",
+    "mobx": "^3.6.1",
+    "mobx-react": "^4.4.2",
+    "native-base": "^2.3.9",
+    "react": "16.2.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
+    "react-native-navbar": "^2.1.0",
+    "react-native-snap-carousel": "^3.6.0",
+    "react-native-swiper": "^1.5.13",
+    "react-native-vector-icons": "^4.5.0",
+    "react-navigation": "^1.1.2"
+  },
+  "name": "expo-train",
+  "version": "0.0.0",
+  "description": "Hello Expo!",
+  "author": null
+}
