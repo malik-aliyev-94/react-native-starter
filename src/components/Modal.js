@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Modal, StyleSheet } from 'react-native';
-import { Button, Text } from 'native-base';
+import { View, Modal, StyleSheet, TouchableOpacity } from 'react-native';
+import { Button, Text, Icon } from 'native-base';
 import Swiper from 'react-native-swiper';
 import AppStore from '../stores/AppStore.js';
 import {observer} from 'mobx-react';
@@ -22,6 +22,13 @@ export default class ModalWindow extends React.Component {
           onRequestClose={() => {
             alert('Modal has been closed.');
           }}>
+          <TouchableOpacity
+            style={{alignSelf: 'center', marginTop: 5, position: 'absolute', top: 0, right: 0, zIndex: 9, padding: 20}}
+            onPress={() => {
+              this.setModalVisible(!AppStore.modalVisible);
+            }}>
+            <Icon name="close" style={{color: '#fff', fontSize: 70}} />
+          </TouchableOpacity>
           <Swiper style={styles.wrapper} showsButtons={true}>
             <View style={styles.slide1}>
               <Text style={styles.text}>Hello Swiper</Text>
@@ -31,13 +38,6 @@ export default class ModalWindow extends React.Component {
             </View>
             <View style={styles.slide3}>
               <Text style={styles.text}>And simple</Text>
-              <Button danger
-                style={{alignSelf: 'center'}}
-                onPress={() => {
-                  this.setModalVisible(!AppStore.modalVisible);
-                }}>
-                <Text>Hide Modal</Text>
-              </Button>
             </View>
           </Swiper>
         </Modal>
@@ -64,5 +64,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#92BBD9',
+  },
+  text: {
+    fontSize: 30
   }
 });
