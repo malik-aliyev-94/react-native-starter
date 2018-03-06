@@ -3,7 +3,7 @@ This is a simple starter project for **React Native**, **Native Base**, **MobX**
 
 The most useful components, libraries and packages for **react-native** are gathered together.
 
-Demo of this project is available on **Expo**.
+Demo of this project is available on [Expo](https://expo.io/@malik-aliyev-94/expo-react-native-starter).
 
 ![Expo Demo](assets/expo-qr.png)
 
@@ -48,3 +48,12 @@ The components folder contain the theme styling files for all the components. Th
 Example, if you need to change the height of Button component, you'll need to change this line in **native-base-theme/components/Button.js**.
 
 The variables folder contain three preset theme variables. You can change the variables (for color, fontFamily, iconFamily etc) for a uniform look and feel throughout your app.
+
+Read more about customization here https://docs.nativebase.io/Customize.html#Customize
+
+## Navigation
+[React Navigation](https://github.com/react-navigation/react-navigation) This is one of the best React Native libraries for Routing and Navigation purposes.
+
+Read the doc from the official [website](https://reactnavigation.org).
+
+In this project we have used **TabNavigator**. You can see the configuration in **./App.js** file.
