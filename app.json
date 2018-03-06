@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "expo-train",
+    "name": "React Native Starter",
     "description": "This project is really great.",
-    "slug": "expo-train",
+    "slug": "expo-react-native-starter",
     "privacy": "public",
     "sdkVersion": "25.0.0",
     "platforms": ["ios", "android"],
