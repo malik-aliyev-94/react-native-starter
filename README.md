@@ -7,6 +7,10 @@ Demo of this project is available on [Expo](https://expo.io/@malik-aliyev-94/exp
 
 ![Expo Demo](assets/expo-qr.png)
 
+[Watch YouTube video](https://youtu.be/e2anEmxTODI)
+
+[![Screenshots](assets/screenshots.jpg)](https://youtu.be/e2anEmxTODI)
+
 ## Contents
 1. NativeBase - Customize getTheme
 2. Navigation
